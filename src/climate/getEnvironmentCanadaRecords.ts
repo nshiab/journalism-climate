@@ -1,6 +1,9 @@
 import { getClosest } from "@nshiab/journalism-geo";
 import sleep from "./helpers/sleep.ts";
 
+/**
+ * Represents a weather station location from Environment Canada's API.
+ */
 type Location = {
   id: string;
   properties: {
