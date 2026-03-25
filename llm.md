@@ -56,21 +56,21 @@ async function getEnvironmentCanadaRecords<T extends Record<string, unknown>>(lo
 
 ### Parameters
 
-- **`locations`**: - An array of location objects, each containing `lat` and
-  `lon` properties. Additional properties will be preserved in the output.
-- **`variable`**: - The type of weather record to retrieve. Must be one of: -
+- **`locations`**: An array of location objects, each containing `lat` and `lon`
+  properties. Additional properties will be preserved in the output.
+- **`variable`**: The type of weather record to retrieve. Must be one of: -
   `"DAILY MAXIMUM TEMPERATURE"`: Record high temperatures in Celsius -
   `"DAILY TOTAL PRECIPITATION"`: Record precipitation amounts in millimeters -
   `"DAILY TOTAL SNOWFALL"`: Record snowfall amounts in centimeters
-- **`dateRange`**: - A tuple of two date strings in "YYYY-MM-DD" format
+- **`dateRange`**: A tuple of two date strings in "YYYY-MM-DD" format
   representing the start and end dates (inclusive) for the record retrieval.
   Note: The year values are only used for iteration purposes to determine which
   calendar days to fetch records for - the actual records returned are
   historical all-time extremes regardless of the year specified.
-- **`options`**: - Configuration options for the data retrieval.
-- **`options.delay`**: - Delay in milliseconds between API requests. Defaults to
+- **`options`**: Configuration options for the data retrieval.
+- **`options.delay`**: Delay in milliseconds between API requests. Defaults to
   100ms. Increase this value if you encounter rate limiting.
-- **`options.verbose`**: - If `true`, logs detailed information about station
+- **`options.verbose`**: If `true`, logs detailed information about station
   selection and API requests. Useful for debugging and monitoring progress.
   Defaults to `false`.
 
@@ -166,8 +166,8 @@ function getHumidex(temperature: number, humidity: number): number;
 
 ### Parameters
 
-- **`temperature`**: - The ambient temperature in Celsius.
-- **`humidity`**: - The relative humidity as a percentage (0-100).
+- **`temperature`**: The ambient temperature in Celsius.
+- **`humidity`**: The relative humidity as a percentage (0-100).
 
 ### Returns
 
@@ -219,12 +219,12 @@ function getSeason(
 
 ### Parameters
 
-- **`options`**: - An object containing options for determining the season.
-- **`options.date`**: - Optional. The date for which to determine the season.
+- **`options`**: An object containing options for determining the season.
+- **`options.date`**: Optional. The date for which to determine the season.
   Defaults to the current date if not provided.
-- **`options.hemisphere`**: - Optional. The hemisphere for which to determine
-  the season. Can be 'northern' or 'southern'. Defaults to 'northern'.
-- **`options.type`**: - Optional. The type of season calculation to use. Can be
+- **`options.hemisphere`**: Optional. The hemisphere for which to determine the
+  season. Can be 'northern' or 'southern'. Defaults to 'northern'.
+- **`options.type`**: Optional. The type of season calculation to use. Can be
   'meteorological' or 'astronomical'. Defaults to 'astronomical'.
 
 ### Returns

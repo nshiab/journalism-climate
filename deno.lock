@@ -1,15 +1,15 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@nshiab/journalism-geo@^1.0.3": "1.0.3",
+    "jsr:@nshiab/journalism-geo@^1.0.4": "1.0.4",
     "jsr:@std/assert@*": "1.0.16",
     "jsr:@std/internal@^1.0.12": "1.0.12",
     "npm:d3-array@^3.2.4": "3.2.4",
-    "npm:geotiff@^3.0.2": "3.0.2"
+    "npm:geotiff@^3.0.5": "3.0.5"
   },
   "jsr": {
-    "@nshiab/journalism-geo@1.0.3": {
-      "integrity": "2e51d00b4ae37d7f317f4d895058e1d3efaeed628833acd91a7d1cd8aae15adb",
+    "@nshiab/journalism-geo@1.0.4": {
+      "integrity": "5717b2a724e86f1f3178a5104b53535fea1b5e85f410beb76f560db24b751da9",
       "dependencies": [
         "npm:d3-array",
         "npm:geotiff"
@@ -35,8 +35,8 @@
         "internmap"
       ]
     },
-    "geotiff@3.0.2": {
-      "integrity": "sha512-KZ+0YK8gW9HWitovPhfHvkyd1gsyXtY9oOrS/OSX+12M8ojAm+NJ6Vl3tUjp7ZMcPO7e7pJoqpWoMdzO0rF8IQ==",
+    "geotiff@3.0.5": {
+      "integrity": "sha512-OWcL9S9+yDZ6iAlXMt32T1iwUApJM8UiD47xbm6ZP1h33d10fqkPs14EG/ttT5EnefpZSx3G15iDFC5FxUNUwA==",
       "dependencies": [
         "@petamoriken/float16",
         "lerc",
@@ -75,7 +75,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@nshiab/journalism-geo@^1.0.3"
+      "jsr:@nshiab/journalism-geo@^1.0.4"
     ]
   }
 }

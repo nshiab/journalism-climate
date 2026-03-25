@@ -1,6 +1,6 @@
 {
   "name": "@nshiab/journalism-climate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "exports": {
     ".": "./src/index.ts",
     "./web": "./src/web.ts"
@@ -23,7 +23,7 @@
   },
   "nodeModulesDir": "auto",
   "imports": {
-    "@nshiab/journalism-geo": "jsr:@nshiab/journalism-geo@^1.0.3"
+    "@nshiab/journalism-geo": "jsr:@nshiab/journalism-geo@^1.0.4"
   },
   "compilerOptions": {
     "lib": [
