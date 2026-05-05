@@ -5,7 +5,8 @@ calculations and data fetching related to climate. It's part of the
 [journalism library](https://github.com/nshiab/journalism).
 
 The library is available on [JSR](https://jsr.io/@nshiab/journalism-climate)
-with its [documentation](https://jsr.io/@nshiab/journalism-climate/doc).
+with its [documentation](https://jsr.io/@nshiab/journalism-climate/doc) and on
+[NPM](https://www.npmjs.com/package/@nshiab/journalism-climate).
 
 The documentation is also available as the markdown file
 [llm.md](https://github.com/nshiab/journalism-climate/blob/main/llm.md), which
@@ -26,20 +27,29 @@ journalist and senior data producer for [CBC News](https://www.cbc.ca/news).
 To install the library, you can use the following commands:
 
 ```bash
-# DENO
-deno install jsr:@nshiab/journalism-climate
+# Deno
+deno add jsr:@nshiab/journalism-climate
 
-# NODE.JS
-npx jsr add @nshiab/journalism-climate
+# Node
+npm i @nshiab/journalism-climate
 
-# BUN
-bunx jsr add @nshiab/journalism-climate
+# Bun
+bun add @nshiab/journalism-climate
 ```
 
-If you run your code in a browser, use the `web` entry point:
+To quickly set up a data project with essential folders, configurations, and
+documentation for AI agents, you can use
+[@nshiab/setup-data-project](https://github.com/nshiab/setup-data-project).
 
-```js
-import { getSeason } from "@nshiab/journalism-climate/web";
+```bash
+# Deno
+deno run -A jsr:@nshiab/setup-data-project
+
+# Node
+npx @nshiab/setup-data-project
+
+# Bun
+bunx @nshiab/setup-data-project
 ```
 
 If you wish to contribute, please check the
