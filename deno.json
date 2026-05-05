@@ -1,6 +1,6 @@
 {
   "name": "@nshiab/journalism-climate",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Useful TypeScript functions for journalism projects. This library focuses on calculations and data fetching related to climate.",
   "repository": "https://github.com/nshiab/journalism-climate",
   "license": "MIT",
