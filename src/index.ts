@@ -10,12 +10,17 @@
  *
  * To install the library with Node.js, use:
  * ```bash
- * npx jsr add @nshiab/journalism-climate
+ * npm i @nshiab/journalism-climate
  * ```
  *
  * To import a function, use:
  * ```ts
  * import { functionName } from "@nshiab/journalism-climate";
+ * ```
+ *
+ * To import a function from the Web entry point, use:
+ * ```ts
+ * import { functionName } from "@nshiab/journalism-climate/web";
  * ```
  */
 
