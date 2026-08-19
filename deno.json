@@ -28,7 +28,7 @@
   },
   "nodeModulesDir": "auto",
   "imports": {
-    "@nshiab/journalism-geo": "jsr:@nshiab/journalism-geo@^1.0.4"
+    "@nshiab/journalism-geo": "jsr:@nshiab/journalism-geo@^1.0.22"
   },
   "compilerOptions": {
     "lib": [

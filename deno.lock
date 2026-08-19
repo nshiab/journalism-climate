@@ -1,17 +1,19 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@nshiab/journalism-geo@^1.0.4": "1.0.4",
+    "jsr:@nshiab/journalism-geo@^1.0.22": "1.0.22",
     "jsr:@std/assert@*": "1.0.16",
     "jsr:@std/internal@^1.0.12": "1.0.12",
     "npm:d3-array@^3.2.4": "3.2.4",
+    "npm:d3-geo@^3.1.1": "3.1.1",
     "npm:geotiff@^3.0.5": "3.0.5"
   },
   "jsr": {
-    "@nshiab/journalism-geo@1.0.4": {
-      "integrity": "5717b2a724e86f1f3178a5104b53535fea1b5e85f410beb76f560db24b751da9",
+    "@nshiab/journalism-geo@1.0.22": {
+      "integrity": "0518f176fb2fa0d18ceaf03ed25fa4492cd5c2cae1fd296b605e852856c47673",
       "dependencies": [
         "npm:d3-array",
+        "npm:d3-geo",
         "npm:geotiff"
       ]
     },
@@ -35,6 +37,12 @@
         "internmap"
       ]
     },
+    "d3-geo@3.1.1": {
+      "integrity": "sha512-637ln3gXKXOwhalDzinUgY83KzNWZRKbYubaG+fGVuc/dxO64RRljtCTnf5ecMyE1RIdtqpkVcq0IbtU2S8j2Q==",
+      "dependencies": [
+        "d3-array"
+      ]
+    },
     "geotiff@3.0.5": {
       "integrity": "sha512-OWcL9S9+yDZ6iAlXMt32T1iwUApJM8UiD47xbm6ZP1h33d10fqkPs14EG/ttT5EnefpZSx3G15iDFC5FxUNUwA==",
       "dependencies": [
@@ -54,8 +62,8 @@
     "lerc@3.0.0": {
       "integrity": "sha512-Rm4J/WaHhRa93nCN2mwWDZFoRVF18G1f47C+kvQWyHGEZxFpTUi73p7lMVSAndyxGt6lJ2/CFbOcf9ra5p8aww=="
     },
-    "pako@2.1.0": {
-      "integrity": "sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug=="
+    "pako@2.2.0": {
+      "integrity": "sha512-zJq6RP/5q+TO2OpFV3FHzlPnFjmkb7Nc99a5SNjJE+uu/PkpChs+NIZSSzbBoD+6kjiISXjfYdwj1ZRQ81dz/w=="
     },
     "parse-headers@2.0.6": {
       "integrity": "sha512-Tz11t3uKztEW5FEVZnj1ox8GKblWn+PvHY9TmJV5Mll2uHEwRdR/5Li1OlXoECjLYkApdhWy44ocONwXLiKO5A=="
@@ -75,7 +83,7 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@nshiab/journalism-geo@^1.0.4"
+      "jsr:@nshiab/journalism-geo@^1.0.22"
     ]
   }
 }
