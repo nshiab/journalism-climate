@@ -1,6 +1,8 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@nshiab/bump-version@*": "0.1.4",
+    "jsr:@nshiab/deno-docs-to-md@*": "0.1.12",
     "jsr:@nshiab/journalism-geo@^1.0.22": "1.0.22",
     "jsr:@std/assert@*": "1.0.16",
     "jsr:@std/internal@^1.0.12": "1.0.12",
@@ -9,6 +11,12 @@
     "npm:geotiff@^3.0.5": "3.0.5"
   },
   "jsr": {
+    "@nshiab/bump-version@0.1.4": {
+      "integrity": "f00c57584240d658426fa7b5b5b12eb14c0ecebcf360daf7ca1033946e60ba29"
+    },
+    "@nshiab/deno-docs-to-md@0.1.12": {
+      "integrity": "bfd7872bc6631b071c2785f29bf1fcfd9c5d69ecd109ea45afe912379ef58292"
+    },
     "@nshiab/journalism-geo@1.0.22": {
       "integrity": "0518f176fb2fa0d18ceaf03ed25fa4492cd5c2cae1fd296b605e852856c47673",
       "dependencies": [
