@@ -1,4 +1,4 @@
-import { getClosest } from "@nshiab/journalism-geo";
+import getClosest from "./helpers/getClosest.ts";
 import sleep from "./helpers/sleep.ts";
 
 /**
@@ -215,13 +215,13 @@ export default async function getEnvironmentCanadaRecords<
       lon,
       lat,
       stationsIdsAndCoordinates,
-      (d) => (d as { lon: number }).lon,
-      (d) => (d as { lat: number }).lat,
+      (station) => station.lon,
+      (station) => station.lat,
       {
         addDistance: true,
         decimals: 0,
       },
-    ) as { id: string; lat: number; lon: number; distance: number };
+    );
 
     if (options.verbose) {
       console.log("closestStation", closestStation);

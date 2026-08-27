@@ -57,7 +57,7 @@ your needs.
 ### Signature
 
 ```typescript
-async function getEnvironmentCanadaRecords<T extends Record<string, unknown>>(locations: T[], variable: "DAILY MAXIMUM TEMPERATURE" | "DAILY TOTAL PRECIPITATION" | "DAILY TOTAL SNOWFALL", dateRange: [${[0m[36mnumber[0m}-${[0m[36mnumber[0m}-${[0m[36mnumber[0m}, ${[0m[36mnumber[0m}-${[0m[36mnumber[0m}-${[0m[36mnumber[0m}], options?: { delay?: number; verbose?: boolean }): Promise<(T & { recordMonth: number; recordDay: number; recordVariable: string; recordValue: number; recordYear: number; previousRecordValue: number; previousRecordYear: number; recordStationName: string; recordStationId: string; recordStationLat: number; recordStationLon: number; recordStationDistance: number; recordStationRecordBegin: string; recordStationRecordEnd: string | null })[]>;
+async function getEnvironmentCanadaRecords<T extends Record<string, unknown>>(locations: T[], variable: "DAILY MAXIMUM TEMPERATURE" | "DAILY TOTAL PRECIPITATION" | "DAILY TOTAL SNOWFALL", dateRange: [${number}-${number}-${number}, ${number}-${number}-${number}], options?: { delay?: number; verbose?: boolean }): Promise<(T & { recordMonth: number; recordDay: number; recordVariable: string; recordValue: number; recordYear: number; previousRecordValue: number; previousRecordYear: number; recordStationName: string; recordStationId: string; recordStationLat: number; recordStationLon: number; recordStationDistance: number; recordStationRecordBegin: string; recordStationRecordEnd: string | null })[]>;
 ```
 
 ### Parameters
