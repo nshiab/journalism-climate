@@ -1,10 +1,10 @@
-# Journalism Climate v1.0.11
+# Journalism Climate v1.0.12
 
 > Useful TypeScript functions for journalism projects. This library focuses on calculations and data fetching related to climate.
 
-- [README](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.11/README.md): Installation, examples and usage.
+- [README](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.12/README.md): Installation, examples and usage.
 
 ## API
-- [getEnvironmentCanadaRecords](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.11/docs/functions/getEnvironmentCanadaRecords.md): getEnvironmentCanadaRecords function
-- [getHumidex](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.11/docs/functions/getHumidex.md): getHumidex function
-- [getSeason](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.11/docs/functions/getSeason.md): getSeason function
+- [getEnvironmentCanadaRecords](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.12/docs/functions/getEnvironmentCanadaRecords.md): getEnvironmentCanadaRecords function
+- [getHumidex](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.12/docs/functions/getHumidex.md): getHumidex function
+- [getSeason](https://raw.githubusercontent.com/nshiab/journalism-climate/v1.0.12/docs/functions/getSeason.md): getSeason function
