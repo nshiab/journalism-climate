@@ -13,13 +13,10 @@ export default function distance(
   const latitude1 = toRadians(lat1);
   const latitude2 = toRadians(lat2);
 
-  const haversine = Math.sin(latitudeDifference / 2) ** 2 +
-    Math.sin(longitudeDifference / 2) ** 2 *
-      Math.cos(latitude1) * Math.cos(latitude2);
-  const angularDistance = 2 * Math.atan2(
-    Math.sqrt(haversine),
-    Math.sqrt(1 - haversine),
-  );
+  const haversine =
+    Math.sin(latitudeDifference / 2) ** 2 +
+    Math.sin(longitudeDifference / 2) ** 2 * Math.cos(latitude1) * Math.cos(latitude2);
+  const angularDistance = 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
   const distanceInKilometres = angularDistance * 6371.0088;
 
   return typeof options.decimals === "number"
