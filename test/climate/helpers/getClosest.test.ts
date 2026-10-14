@@ -1,7 +1,11 @@
-import { assertEquals, assertNotStrictEquals } from "jsr:@std/assert";
+import {
+  deepStrictEqual as assertEquals,
+  notStrictEqual as assertNotStrictEquals,
+} from "node:assert/strict";
+import { test } from "vite-plus/test";
 import getClosest from "../../../src/climate/helpers/getClosest.ts";
 
-Deno.test("getClosest returns a copy of the closest item with its distance", () => {
+test("getClosest returns a copy of the closest item with its distance", () => {
   const stations = [
     { id: "montreal", lon: -73.5673, lat: 45.5017 },
     { id: "toronto", lon: -79.3832, lat: 43.6532 },

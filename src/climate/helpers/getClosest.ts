@@ -41,13 +41,9 @@ export default function getClosest<T>(
 
   for (let index = 0; index < items.length; index++) {
     const item = items[index];
-    const itemDistance = distance(
-      lon,
-      lat,
-      getItemLon(item),
-      getItemLat(item),
-      { decimals: options.decimals },
-    );
+    const itemDistance = distance(lon, lat, getItemLon(item), getItemLat(item), {
+      decimals: options.decimals,
+    });
 
     if (itemDistance < closestDistance) {
       closestIndex = index;
@@ -63,5 +59,5 @@ export default function getClosest<T>(
     throw new Error("Cannot add distance property to non-object item");
   }
 
-  return { ...closest, distance: closestDistance } as T & { distance: number };
+  return { ...closest, distance: closestDistance };
 }

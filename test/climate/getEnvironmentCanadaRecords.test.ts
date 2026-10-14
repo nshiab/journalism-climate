@@ -1,13 +1,16 @@
-import { assertEquals } from "jsr:@std/assert";
+import { deepStrictEqual as assertEquals } from "node:assert/strict";
+import { test } from "vite-plus/test";
 import getEnvironmentCanadaRecords from "../../src/climate/getEnvironmentCanadaRecords.ts";
 
-Deno.test("should return the temperature records for the given locations without options", async () => {
+test("should return the temperature records for the given locations without options", async () => {
   const records = await getEnvironmentCanadaRecords(
-    [{
-      lat: 45.52,
-      lon: -73.65,
-      name: "Montreal",
-    }],
+    [
+      {
+        lat: 45.52,
+        lon: -73.65,
+        name: "Montreal",
+      },
+    ],
     "DAILY MAXIMUM TEMPERATURE",
     ["2023-07-01", "2023-07-01"],
   );
@@ -37,13 +40,15 @@ Deno.test("should return the temperature records for the given locations without
     },
   ]);
 });
-Deno.test("should return the temperature records for the given locations with options", async () => {
+test("should return the temperature records for the given locations with options", async () => {
   const records = await getEnvironmentCanadaRecords(
-    [{
-      lat: 45.52,
-      lon: -73.65,
-      name: "Montreal",
-    }],
+    [
+      {
+        lat: 45.52,
+        lon: -73.65,
+        name: "Montreal",
+      },
+    ],
     "DAILY MAXIMUM TEMPERATURE",
     ["2023-07-01", "2023-07-01"],
     {
@@ -77,13 +82,15 @@ Deno.test("should return the temperature records for the given locations with op
     },
   ]);
 });
-Deno.test("should return the precipitation records for the given locations with options", async () => {
+test("should return the precipitation records for the given locations with options", async () => {
   const records = await getEnvironmentCanadaRecords(
-    [{
-      lat: 43.68,
-      lon: -79.64,
-      name: "Toronto",
-    }],
+    [
+      {
+        lat: 43.68,
+        lon: -79.64,
+        name: "Toronto",
+      },
+    ],
     "DAILY TOTAL PRECIPITATION",
     ["2023-07-01", "2023-07-01"],
     {
@@ -117,13 +124,15 @@ Deno.test("should return the precipitation records for the given locations with 
     },
   ]);
 });
-Deno.test("should return the snow records for the given locations with options", async () => {
+test("should return the snow records for the given locations with options", async () => {
   const records = await getEnvironmentCanadaRecords(
-    [{
-      lat: 49.2,
-      lon: -123.19,
-      name: "Vancouver",
-    }],
+    [
+      {
+        lat: 49.2,
+        lon: -123.19,
+        name: "Vancouver",
+      },
+    ],
     "DAILY TOTAL SNOWFALL",
     ["2023-07-01", "2023-07-01"],
     {
@@ -157,7 +166,7 @@ Deno.test("should return the snow records for the given locations with options",
     },
   ]);
 });
-Deno.test("should return the temperatre records for multiple locations and multiple dates", async () => {
+test("should return the temperatre records for multiple locations and multiple dates", async () => {
   const records = await getEnvironmentCanadaRecords(
     [
       { lat: 45.52, lon: -73.65, name: "Montreal" },

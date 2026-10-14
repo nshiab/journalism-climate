@@ -3,12 +3,6 @@
  *
  * Astronomical seasons are based on the Earth's position in its orbit around the sun, marked by equinoxes and solstices. Meteorological seasons are based on the annual temperature cycle and are typically defined by calendar months, making them consistent for statistical purposes.
  *
- * @param options - An object containing options for determining the season.
- * @param options.date - Optional. The date for which to determine the season. Defaults to the current date if not provided.
- * @param options.hemisphere - Optional. The hemisphere for which to determine the season. Can be 'northern' or 'southern'. Defaults to 'northern'.
- * @param options.type - Optional. The type of season calculation to use. Can be 'meteorological' or 'astronomical'. Defaults to 'astronomical'.
- * @returns The name of the season ('winter', 'spring', 'summer', or 'fall').
- *
  * @example
  * ```ts
  * // Get the current season in the northern hemisphere using astronomical seasons.
@@ -45,7 +39,13 @@
  * const meteorologicalSeasonDec = getSeason({ date: december1, type: 'meteorological' });
  * console.log(`Meteorological season on December 1: ${meteorologicalSeasonDec}`); // Output: "winter"
  * ```
- * @category Weather and climate
+ * @param options - An object containing options for determining the season.
+ * @param options.date - Optional. The date for which to determine the season. Defaults to the current date if not provided.
+ * @param options.hemisphere - Optional. The hemisphere for which to determine the season. Can be 'northern' or 'southern'. Defaults to 'northern'.
+ * @param options.type - Optional. The type of season calculation to use. Can be 'meteorological' or 'astronomical'. Defaults to 'astronomical'.
+ * @returns The name of the season ('winter', 'spring', 'summer', or 'fall').
+ *
+ * @category Climate
  */
 export default function getSeason(
   options: {
@@ -54,11 +54,7 @@ export default function getSeason(
     type?: "meteorological" | "astronomical";
   } = {},
 ): "winter" | "spring" | "summer" | "fall" {
-  const {
-    date = new Date(),
-    hemisphere = "northern",
-    type = "astronomical",
-  } = options;
+  const { date = new Date(), hemisphere = "northern", type = "astronomical" } = options;
 
   const month = date.getMonth();
 
