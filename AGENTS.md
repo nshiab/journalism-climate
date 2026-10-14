@@ -44,6 +44,10 @@
 
 ## Phase 3: Validation
 
+- Skip live-network tests when `CI=true` using
+  `test.skipIf(process.env.CI === "true")`. Run them locally by default, and keep
+  offline and mocked tests enabled everywhere.
+
 - The weather-record tests make read-only requests to Environment Canada. Preserve
   their scenarios and account for service availability and changing record data.
   Tests run with the America/Toronto timezone.

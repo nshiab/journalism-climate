@@ -2,45 +2,50 @@ import { deepStrictEqual as assertEquals } from "node:assert/strict";
 import { test } from "vite-plus/test";
 import getEnvironmentCanadaRecords from "../../src/climate/getEnvironmentCanadaRecords.ts";
 
-test("should return the temperature records for the given locations without options", async () => {
-  const records = await getEnvironmentCanadaRecords(
-    [
+const liveTest = test.skipIf(process.env.CI === "true");
+
+liveTest(
+  "should return the temperature records for the given locations without options",
+  async () => {
+    const records = await getEnvironmentCanadaRecords(
+      [
+        {
+          lat: 45.52,
+          lon: -73.65,
+          name: "Montreal",
+        },
+      ],
+      "DAILY MAXIMUM TEMPERATURE",
+      ["2023-07-01", "2023-07-01"],
+    );
+    // records[0].recordValue = 36.1;
+    // records[0].recordYear = 2023;
+    // records[0].previousRecordValue = 35.6;
+    // records[0].previousRecordYear = 1955;
+    assertEquals(records, [
       {
         lat: 45.52,
         lon: -73.65,
         name: "Montreal",
+        recordMonth: 7,
+        recordDay: 1,
+        recordVariable: "DAILY MAXIMUM TEMPERATURE",
+        recordValue: 36.1,
+        recordYear: 1931,
+        previousRecordValue: 33.9,
+        previousRecordYear: 1913,
+        recordStationName: "MONTRÉAL AREA",
+        recordStationId: "VSQC147",
+        recordStationLat: 45.52,
+        recordStationLon: -73.65,
+        recordStationDistance: 0,
+        recordStationRecordBegin: "1871-07-01T00:00:00Z",
+        recordStationRecordEnd: null,
       },
-    ],
-    "DAILY MAXIMUM TEMPERATURE",
-    ["2023-07-01", "2023-07-01"],
-  );
-  // records[0].recordValue = 36.1;
-  // records[0].recordYear = 2023;
-  // records[0].previousRecordValue = 35.6;
-  // records[0].previousRecordYear = 1955;
-  assertEquals(records, [
-    {
-      lat: 45.52,
-      lon: -73.65,
-      name: "Montreal",
-      recordMonth: 7,
-      recordDay: 1,
-      recordVariable: "DAILY MAXIMUM TEMPERATURE",
-      recordValue: 36.1,
-      recordYear: 1931,
-      previousRecordValue: 33.9,
-      previousRecordYear: 1913,
-      recordStationName: "MONTRÉAL AREA",
-      recordStationId: "VSQC147",
-      recordStationLat: 45.52,
-      recordStationLon: -73.65,
-      recordStationDistance: 0,
-      recordStationRecordBegin: "1871-07-01T00:00:00Z",
-      recordStationRecordEnd: null,
-    },
-  ]);
-});
-test("should return the temperature records for the given locations with options", async () => {
+    ]);
+  },
+);
+liveTest("should return the temperature records for the given locations with options", async () => {
   const records = await getEnvironmentCanadaRecords(
     [
       {
@@ -82,49 +87,52 @@ test("should return the temperature records for the given locations with options
     },
   ]);
 });
-test("should return the precipitation records for the given locations with options", async () => {
-  const records = await getEnvironmentCanadaRecords(
-    [
+liveTest(
+  "should return the precipitation records for the given locations with options",
+  async () => {
+    const records = await getEnvironmentCanadaRecords(
+      [
+        {
+          lat: 43.68,
+          lon: -79.64,
+          name: "Toronto",
+        },
+      ],
+      "DAILY TOTAL PRECIPITATION",
+      ["2023-07-01", "2023-07-01"],
+      {
+        delay: 250,
+        verbose: true,
+      },
+    );
+    // records[0].recordValue = 33;
+    // records[0].recordYear = 1956;
+    // records[0].previousRecordValue = 30.2;
+    // records[0].previousRecordYear = 1945;
+    assertEquals(records, [
       {
         lat: 43.68,
         lon: -79.64,
         name: "Toronto",
+        recordMonth: 7,
+        recordDay: 1,
+        recordVariable: "DAILY TOTAL PRECIPITATION",
+        recordValue: 33,
+        recordYear: 1956,
+        previousRecordValue: 31.2,
+        previousRecordYear: 1953,
+        recordStationName: "MISSISSAUGA AREA",
+        recordStationId: "VSON24V",
+        recordStationLat: 43.59,
+        recordStationLon: -79.66,
+        recordStationDistance: 10,
+        recordStationRecordBegin: "1937-11-01T00:00:00Z",
+        recordStationRecordEnd: null,
       },
-    ],
-    "DAILY TOTAL PRECIPITATION",
-    ["2023-07-01", "2023-07-01"],
-    {
-      delay: 250,
-      verbose: true,
-    },
-  );
-  // records[0].recordValue = 33;
-  // records[0].recordYear = 1956;
-  // records[0].previousRecordValue = 30.2;
-  // records[0].previousRecordYear = 1945;
-  assertEquals(records, [
-    {
-      lat: 43.68,
-      lon: -79.64,
-      name: "Toronto",
-      recordMonth: 7,
-      recordDay: 1,
-      recordVariable: "DAILY TOTAL PRECIPITATION",
-      recordValue: 33,
-      recordYear: 1956,
-      previousRecordValue: 31.2,
-      previousRecordYear: 1953,
-      recordStationName: "MISSISSAUGA AREA",
-      recordStationId: "VSON24V",
-      recordStationLat: 43.59,
-      recordStationLon: -79.66,
-      recordStationDistance: 10,
-      recordStationRecordBegin: "1937-11-01T00:00:00Z",
-      recordStationRecordEnd: null,
-    },
-  ]);
-});
-test("should return the snow records for the given locations with options", async () => {
+    ]);
+  },
+);
+liveTest("should return the snow records for the given locations with options", async () => {
   const records = await getEnvironmentCanadaRecords(
     [
       {
@@ -166,20 +174,23 @@ test("should return the snow records for the given locations with options", asyn
     },
   ]);
 });
-test("should return the temperatre records for multiple locations and multiple dates", async () => {
-  const records = await getEnvironmentCanadaRecords(
-    [
-      { lat: 45.52, lon: -73.65, name: "Montreal" },
-      { lat: 43.68, lon: -79.64, name: "Toronto" },
-      { lat: 49.2, lon: -123.19, name: "Vancouver" },
-    ],
-    "DAILY MAXIMUM TEMPERATURE",
-    ["2023-07-01", "2023-07-3"],
-    {
-      delay: 250,
-      verbose: true,
-    },
-  );
-  console.table(records);
-  assertEquals(records.length, 9);
-});
+liveTest(
+  "should return the temperatre records for multiple locations and multiple dates",
+  async () => {
+    const records = await getEnvironmentCanadaRecords(
+      [
+        { lat: 45.52, lon: -73.65, name: "Montreal" },
+        { lat: 43.68, lon: -79.64, name: "Toronto" },
+        { lat: 49.2, lon: -123.19, name: "Vancouver" },
+      ],
+      "DAILY MAXIMUM TEMPERATURE",
+      ["2023-07-01", "2023-07-3"],
+      {
+        delay: 250,
+        verbose: true,
+      },
+    );
+    console.table(records);
+    assertEquals(records.length, 9);
+  },
+);
