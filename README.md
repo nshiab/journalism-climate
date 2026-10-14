@@ -29,15 +29,12 @@ const humidex = getHumidex(30, 70);
 console.log(humidex); // 41
 ```
 
-The main entry point exports `getEnvironmentCanadaRecords`, `getHumidex`, and
-`getSeason`. For browser projects, use the `/web` entry point, which exports only
-`getHumidex` and `getSeason`:
+For browser projects, use the `/web` entry point:
 
 ```ts
-import { getHumidex, getSeason } from "@nshiab/journalism-climate/web";
+import { getHumidex } from "@nshiab/journalism-climate/web";
 
 console.log(getHumidex(30, 70)); // 41
-console.log(getSeason());
 ```
 
 To start a data project with folders, configuration and documentation for AI
