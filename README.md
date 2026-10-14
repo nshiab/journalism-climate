@@ -23,10 +23,14 @@ npm install @nshiab/journalism-climate
 ```
 
 ```ts
-import { getHumidex } from "@nshiab/journalism-climate";
+import { getEnvironmentCanadaRecords } from "@nshiab/journalism-climate";
 
-const humidex = getHumidex(30, 70);
-console.log(humidex); // 41
+const records = await getEnvironmentCanadaRecords(
+  [{ lat: 45.52, lon: -73.65, name: "Montreal" }],
+  "DAILY MAXIMUM TEMPERATURE",
+  ["2023-07-01", "2023-07-01"],
+);
+console.table(records);
 ```
 
 For browser projects, use the `/web` entry point:
