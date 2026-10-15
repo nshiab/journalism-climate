@@ -6,7 +6,7 @@
 
 # Function: getEnvironmentCanadaRecords()
 
-> **getEnvironmentCanadaRecords**\<`T`\>(`locations`, `variable`, `dateRange`, `options?`): `Promise`\<`T` & `object`[]\>
+> **getEnvironmentCanadaRecords**\<`T`\>(`locations`, `variable`, `dateRange`, `options?`): `Promise`\<(`T` & `object`)[]\>
 
 Retrieves historical weather records from Environment and Climate Change Canada for specified locations and date ranges. This function fetches extreme weather records (daily maximum temperatures, precipitation, or snowfall) from the closest weather stations to your provided coordinates.
 
@@ -70,7 +70,7 @@ If `true`, logs detailed information about station selection and API requests. U
 
 ## Returns
 
-`Promise`\<`T` & `object`[]\>
+`Promise`\<(`T` & `object`)[]\>
 
 A Promise that resolves to an array of objects containing the weather records. Each object includes:
   - All original properties from the input location
