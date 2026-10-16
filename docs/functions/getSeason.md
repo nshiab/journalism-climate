@@ -1,4 +1,4 @@
-[**Journalism Climate v1.0.14**](../index.md)
+[**Journalism Climate v1.0.15**](../index.md)
 
 ***
 
