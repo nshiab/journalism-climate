@@ -1,4 +1,4 @@
-**Journalism Climate v1.0.13**
+**Journalism Climate v1.0.14**
 
 ***
 

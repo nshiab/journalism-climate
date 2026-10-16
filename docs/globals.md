@@ -1,8 +1,8 @@
-[**Journalism Climate v1.0.13**](index.md)
+[**Journalism Climate v1.0.14**](index.md)
 
 ***
 
-# Journalism Climate v1.0.13
+# Journalism Climate v1.0.14
 
 Climate calculations and historical weather records.
 
